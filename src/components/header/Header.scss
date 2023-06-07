@@ -1,39 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+@import 'src/scss/mixins.scss';
 
 .header{
     width: 100%;
     height: 90px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    &__logo{
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;        
-        color: #244D4D;
-    }
-    &__options{
+    &__left,&__right{
+        width: 50%;
+        height: 100%;
         display: flex;
-        gap: 30px;
-        img{
-            width: 24px;
-            height: 24px;
-        }
+        align-items: center;
     }
-    ul{
-        gap: 70px;
-        @media screen and (max-width: 915px) {
-            display: none;
-        }
-        li{
-            color: #161616;
-            font-family: 'DM Sans';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 21px;
-        }
+    &__right{
+        justify-content: end
     }
+    &__logo{
+        width: 180px;
+        height:150px;
+    }
+    &__ul{
+       display: flex;
+    }
+    &__li{
+        list-style: none;
+        margin: 0 10px;
+        font-family: 'Montserrat';
+        @include text(20px, #fff, 600, 30px);
+    }
+    
 }
