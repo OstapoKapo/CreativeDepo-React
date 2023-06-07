@@ -1,0 +1,16 @@
+@mixin container() {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+}
+@mixin block($height) {
+    width: 100%;
+    height: $height;
+    display: flex;
+}
+@mixin text($fontSize, $color, $fontWeight, $lineHeight) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+    line-height: $lineHeight;
+}

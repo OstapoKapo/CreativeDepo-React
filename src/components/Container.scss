@@ -1,0 +1,11 @@
+@import 'src/scss/mixins.scss';
+
+.main{
+    @include block(auto);
+    justify-content: center;
+    background-color: #131313;
+    &__container{
+        @include container();
+        flex-direction: column;
+    }
+}
