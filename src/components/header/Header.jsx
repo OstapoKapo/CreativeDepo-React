@@ -1,12 +1,6 @@
 import './Header.css';
 import Logo from './img/logo.svg'
-// /Users/User/Desktop/REACT/reactProject/CreativeDepo/src/utils/appendScript
-import {appendScript} from 'src/utils/appendScript.jsx'
-class Demo extends React.Component {
-componentDidMount () {
-    appendScript("components/header/header.js");
-}
-}
+
 
 function Header() {
   return (
