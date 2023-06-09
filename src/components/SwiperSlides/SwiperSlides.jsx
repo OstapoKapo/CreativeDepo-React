@@ -10,7 +10,7 @@ let slidesImgArr = [slide1,slide2,slide3,slide4];
 function SwiperSlides(props){
   return(
        <SwiperSlide className='swiper__slide'>
-          <img src={slidesImgArr[props.img]} alt="slide"/>
+          <img src={slidesImgArr[props.img]} alt=""/>
        </SwiperSlide>
   )
 }
