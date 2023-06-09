@@ -6,6 +6,7 @@
     height: 90px;
     display: flex;
     align-items: center;
+    z-index: 10;
     &__left,&__right{
         width: 50%;
         height: 100%;

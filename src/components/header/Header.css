@@ -4,6 +4,7 @@
   height: 90px;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 .header__left, .header__right {
   width: 50%;
