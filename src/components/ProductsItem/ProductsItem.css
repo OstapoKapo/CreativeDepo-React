@@ -1,0 +1,22 @@
+.productsItem {
+  width: 300px;
+  height: min-content;
+}
+.productsItem__img {
+  width: 100%;
+  height: 300px;
+}
+.productsItem__main {
+  width: 100%;
+  height: min-content;
+  background-color: #fff;
+  padding: 20px 20px;
+}
+.productsItem__name {
+  font-size: 20px;
+  color: #000;
+  font-weight: 700;
+  line-height: 30px;
+  font-family: "Montserrat";
+  margin-bottom: 10px;
+}

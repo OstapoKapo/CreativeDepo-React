@@ -11,6 +11,7 @@ function Container() {
             <Header />
             <Swiper />
             <Filter />
+            <Prodcuts />
         </div>
     </div>
   );
