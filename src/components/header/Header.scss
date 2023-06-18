@@ -1,0 +1,42 @@
+@import 'src/scss/mixins.scss';
+
+.header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding: 0 20px;
+    &__left,&__right{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__right{
+        justify-content: end
+    }
+    &__logo{
+        width: 180px;
+        height:150px;
+    }
+    &__ul{
+       display: flex;
+       &:last-child{
+        margin-right: 0px;
+       }
+    }
+    &__li{
+        list-style: none;
+        margin: 0 10px;
+        transition: 0.5s;
+        &:hover{
+            color: red;
+            transition: 0.5s;
+        }
+        cursor: pointer;
+        font-family: 'Montserrat';
+        @include text(18px, #fff, 600, 30px);
+    }
+    
+}

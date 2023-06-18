@@ -1,0 +1,6 @@
+.productsContainer {
+  width: 75%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
