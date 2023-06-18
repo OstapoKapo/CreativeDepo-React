@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
+  font-family: 'Montserrat';
   line-height: 1.5; }
 ul,
 ol{list-style: none;}
