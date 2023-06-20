@@ -15,13 +15,6 @@ import "swiper/scss/effect-fade";
 // import required modules
 import {Navigation, Pagination, EffectFade, Autoplay} from 'swiper';
 
-let slides = [
-    {img:0},
-    {img:1},
-    {img:2},
-    {img:3},
-]
-
 function SwiperPage1(){
   return (
     <div className='containerSwiper'>
