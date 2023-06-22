@@ -54,7 +54,7 @@ function SwiperPage1(){
         <SwiperSlide className='swiper__slide'>
           <img src={slide4} alt="" />  
         </SwiperSlide>  
-        {/* {slides.map((item) => <SwiperSlides key={item.img} img={item.img} />)} */}
+        
       </Swiper>
     </div>
   );
