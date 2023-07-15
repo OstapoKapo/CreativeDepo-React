@@ -3,6 +3,7 @@ import Header from './header/Header.jsx';
 import Swiper from './Swiper/Swiper';
 import Filter from './Filter/Filter';
 import Prodcuts from './ProductsContainer/ProductsContainer'
+import HelpUkraine from './HelpUkraine/HelpUkraine';
 
 function Container() {
   return (
@@ -11,6 +12,7 @@ function Container() {
             <Swiper />
             <Filter />
             <Prodcuts />
+            <HelpUkraine />
     </div>
   );
 }

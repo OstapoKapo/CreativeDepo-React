@@ -1,0 +1,31 @@
+.helpUkraine {
+  width: 100%;
+  height: 80vh;
+}
+.helpUkraine__row {
+  width: 100%;
+  height: min-content;
+  display: flex;
+}
+.helpUkraine__row__left, .helpUkraine__row__right {
+  width: 50%;
+  height: 100%;
+}
+.helpUkraine__row__right {
+  display: flex;
+  justify-content: end;
+}
+.helpUkraine__row__block {
+  width: 20%;
+  height: 100px;
+  background-color: #fff;
+}
+.helpUkraine__main {
+  width: 75%;
+  height: min-content;
+  display: flex;
+}
+.helpUkraine__main__left, .helpUkraine__main__right {
+  width: 50%;
+  height: 100%;
+}
