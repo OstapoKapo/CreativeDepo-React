@@ -7,12 +7,10 @@ import Prodcuts from './ProductsContainer/ProductsContainer'
 function Container() {
   return (
     <div className="main">
-        <div className="main__container">
             <Header />
             <Swiper />
             <Filter />
             <Prodcuts />
-        </div>
     </div>
   );
 }

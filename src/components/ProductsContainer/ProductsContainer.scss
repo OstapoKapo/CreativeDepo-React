@@ -1,6 +1,31 @@
-.productsContainer{
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+
+.productsList{
     width: 75%;
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
 }
+.productsContainer{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__btn{
+        width: 175px;
+        height: 40px;
+        color: #fff;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        font-family: 'Montserrat';
+    }
+}
+
