@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+@import 'src/scss/mixins.scss';
+
 .helpUkraine{
     width: 100%;
     height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     &__row{
         width: 100%;height: min-content;
         display: flex;
@@ -20,12 +26,43 @@
         }
     }
     &__main{
-        width: 75%;
-        height: min-content;
+        width: 70%;
+        height: 550px;
+        margin-top: 30px;
         display: flex;
         &__left,&__right{
-            width: 50%;
+            width: 49%;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center
         }
+        &__right{
+            width: 50%;
+            margin-left: 10px;
+        }
+    }
+    &__header{
+        @include text(32px, #fff, 700, 40px); 
+        font-family: 'Montserrat';
+        margin-bottom: 30px;
+    }
+    &__block{
+        width: 100%;
+        height: min-content;
+        padding-left: 10px;
+        font-family: 'Montserrat';
+        @include text(22px, #fff, 600, 30px); 
+        &_blue{
+            border-left: 6px solid #639BF0;
+        }
+        &_yellow{
+            border-left: 6px solid yellow;
+            margin-top: 40px;
+        }
+    }
+    &__swiper{
+        width: 550px;
+        height: 550px;
     }
 }
