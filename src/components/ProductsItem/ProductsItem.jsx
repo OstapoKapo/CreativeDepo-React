@@ -1,11 +1,11 @@
 import './ProductsItem.css';
-import photo from './img/blackCapBravery.jpg'
 
 function ProductsItem(props) {
+  
     if(props.type === 'cover'){
         return(
             <div className="productsItem" id={'item'+props._id}>
-            <div className='productsItem__img'  style={{backgroundImage: `url(./img/blackCapBravery.jpg)`}} ></div>
+            <img className='productsItem__img' src={'img/'+props.img}  alt="photo" />
             <div className="productsItem__main">
                 <div className="productsItem__main__top">
                     <p className="productsItem__name">{props.name}</p>
@@ -22,7 +22,7 @@ function ProductsItem(props) {
     }else{
         return(
             <div className="productsItem" id={'item'+props._id}>
-            <img className='productsItem__img' src={photo} alt="" />
+            <img className='productsItem__img' src={'img/'+props.img}  alt="photo" />
             <div className="productsItem__main">
                 <div className="productsItem__main__top">
                     <p className="productsItem__name">{props.name}</p>

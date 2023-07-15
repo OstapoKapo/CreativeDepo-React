@@ -1,7 +1,9 @@
 import './ProductsContainer.css';
 import ProductsItem from '../ProductsItem/ProductsItem';
 import React, { useState, useEffect } from "react";
+
 let productsArr =[]
+
 function ProductsContainer() {
 
     const [products, setMessage] = useState("");
