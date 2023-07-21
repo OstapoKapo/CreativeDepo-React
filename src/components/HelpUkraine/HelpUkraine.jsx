@@ -20,7 +20,7 @@ export default function HelpUkraine() {
                 <div className="helpUkraine__block helpUkraine__block_yellow">Тут є фото бронежилетів, які були виготовлені завдяки вашим замовленням. <br /> <br />  Плити 4 класу, покриті протисколковим та демпферним покриттям. Плитоноска важить 1,5 кг + 2 плити по 3кг, загалом — 7,5 кг, що є досить комфортним для тривалого використання військовими.</div>
             </div>
             <div className="helpUkraine__main__right">
-                
+                <div className="helpUkraine__swiper"></div>
             </div>
         </div>
     </div>
