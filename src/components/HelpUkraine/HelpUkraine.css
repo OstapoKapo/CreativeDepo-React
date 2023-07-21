@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
 .helpUkraine {
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -26,9 +26,10 @@
 }
 .helpUkraine__main {
   width: 70%;
-  height: 550px;
+  height: min-content;
   margin-top: 30px;
   display: flex;
+  align-items: center;
 }
 .helpUkraine__main__left, .helpUkraine__main__right {
   width: 49%;
@@ -69,4 +70,12 @@
 .helpUkraine__swiper {
   width: 550px;
   height: 550px;
+}
+.helpUkraine__swiper__slide {
+  width: 100%;
+  height: 100%;
+}
+.helpUkraine__swiper__slide img {
+  width: 100%;
+  height: 100%;
 }

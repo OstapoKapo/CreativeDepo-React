@@ -3,7 +3,7 @@ import slide1 from './img/swiper1_img1.png';
 import slide2 from './img/swiper1_img2.png';
 import slide3 from './img/swiper1_img3.png';
 import slide4 from './img/swiper1_img4.png';
-import SwiperSlides from '../SwiperSlides/SwiperSlides'
+// import SwiperSlides from '../SwiperSlides/SwiperSlides'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
