@@ -7,9 +7,8 @@ import Logo from './img/logo.svg';
 function Header() {
 
   const header = useRef(0);
-
   useEffect(() => {
-    const handleScroll = event => {
+    const handleScroll = (e) => {
       if(window.scrollY >= 100){
         header.current.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
       }else{

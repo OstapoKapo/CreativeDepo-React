@@ -6,12 +6,14 @@
     margin: 100px 0 65px 0;
     display: flex;
     &__item{
-        width: 16.6%;
+        width: 20.6%;
         height: 100%;
         display: flex;
         background-color: #fff;
         align-items: center;
         justify-content: center;
+        transition: 0.4s;
+        cursor: pointer;
         &__p{
             @include text(20px, #000, 400, 30px);
             font-family: 'Montserrat';

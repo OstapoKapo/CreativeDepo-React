@@ -6,12 +6,14 @@
   display: flex;
 }
 .filter__item {
-  width: 16.6%;
+  width: 20.6%;
   height: 100%;
   display: flex;
   background-color: #fff;
   align-items: center;
   justify-content: center;
+  transition: 0.4s;
+  cursor: pointer;
 }
 .filter__item__p {
   font-size: 20px;

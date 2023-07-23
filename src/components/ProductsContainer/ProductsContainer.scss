@@ -2,14 +2,14 @@
 
 .productsList{
     width: 75%;
-    min-height: 100vh;
+    height: min-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 .productsContainer{
     width:100%;
-    min-height: 100vh;
+    height: min-content;
     display: flex;
     flex-wrap: wrap;
     display: flex;
