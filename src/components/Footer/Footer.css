@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+.footer {
+  width: 100%;
+  padding-top: 60px;
+  height: min-content;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat";
+}
+.footer__text {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Montserrat";
+}
+.footer__email {
+  font-size: 20px;
+  color: #fb472e;
+  margin-top: 15px;
+  font-family: "Montserrat";
+  margin-bottom: 20px;
+}
+.footer__row {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Montserrat";
+  font-weight: 700;
+}
+.footer__btn_red {
+  background-color: #E93C2C;
+}
+.footer__btn_blue {
+  background-color: #1C8ADB;
+}
+.footer__btn img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.footer__ul {
+  display: flex;
+}
+.footer__li {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 25px;
+  font-weight: 600;
+  margin: 50px 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.footer__li:hover {
+  transition: 0.4s;
+  color: #E93C2C;
+}
+.footer__item {
+  width: 15%;
+  height: min-content;
+  margin-bottom: 50px;
+}
+.footer__item__header {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: "Montserrat";
+  font-weight: 600;
+}

@@ -18,4 +18,12 @@
 .swiper-button-next{
     transform: rotate(180deg);
 }
+.swiper__slide{
+    width: 100%;
+    height: 100%;
+    & img{
+        width: 100%;
+        height: 100%;
+    }
+}
 

@@ -4,6 +4,8 @@
   display: flex;
   align-items: center;
   z-index: 10;
+  position: fixed;
+  transition: 0.7s;
   padding: 0 20px;
 }
 .header__left, .header__right {

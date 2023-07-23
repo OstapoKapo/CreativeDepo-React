@@ -4,6 +4,7 @@ import Swiper from './Swiper/Swiper';
 import Filter from './Filter/Filter';
 import Prodcuts from './ProductsContainer/ProductsContainer'
 import HelpUkraine from './HelpUkraine/HelpUkraine';
+import Footer from './Footer/Footer';
 
 function Container() {
   return (
@@ -13,6 +14,7 @@ function Container() {
             <Filter />
             <Prodcuts />
             <HelpUkraine />
+            <Footer />
     </div>
   );
 }

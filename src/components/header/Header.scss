@@ -6,6 +6,8 @@
     display: flex;
     align-items: center;
     z-index: 10;
+    position: fixed;
+    transition: 0.7s;
     padding: 0 20px;
     &__left,&__right{
         width: 50%;
