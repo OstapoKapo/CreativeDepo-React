@@ -1,0 +1,101 @@
+.popup {
+  width: 100%;
+  background-color: #fff;
+  height: 130vh;
+  background: rgba(0, 0, 0, 0.9);
+  padding-top: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.popup__row {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+}
+.popup__row_cancel {
+  justify-content: end;
+  margin: 20px 0 40px 0;
+  padding-right: 30px;
+}
+.popup__row_swiper {
+  margin-top: 15px;
+  width: min-content;
+}
+.popup__row_color {
+  margin: 10px 0;
+}
+.popup__container {
+  width: 65%;
+  min-height: 100vh;
+  z-index: 20;
+  background-color: #fff;
+}
+.popup__closeBtn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.popup__closeBtn img {
+  width: 100%;
+  height: 100%;
+}
+.popup__main {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  padding-top: 20px;
+}
+.popup__main__left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.popup__main__right {
+  width: 50%;
+  height: 100%;
+}
+.popup__swiper {
+  width: 560px;
+  height: 560px;
+}
+.popup__swiper__slide {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+.popup__swiper__slide img {
+  width: 100%;
+  height: 100%;
+}
+.popup__swiper__img {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+}
+.popup__swiper__img img {
+  width: 100%;
+  height: 100%;
+}
+.popup__header {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+}
+.popup__text {
+  font-family: "Montserrat";
+  font-size: 15px;
+}
+.popup__price {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

@@ -5,6 +5,7 @@ import Filter from './Filter/Filter';
 import Prodcuts from './ProductsContainer/ProductsContainer'
 import HelpUkraine from './HelpUkraine/HelpUkraine';
 import Footer from './Footer/Footer';
+import Popup from './popup/popup';
 import { useState, useEffect } from 'react';
 
 
@@ -29,6 +30,7 @@ function Container() {
             <Prodcuts products={products} setProducts={setProducts}/>
             <HelpUkraine />
             <Footer />
+            <Popup />
     </div>
   );
 }
