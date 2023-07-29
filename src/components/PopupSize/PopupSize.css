@@ -1,0 +1,12 @@
+.popup__select {
+  width: 150px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  background-color: #F8F8F8;
+  padding-left: 10px;
+  cursor: pointer;
+  height: 30px;
+  margin-top: 5px;
+  font-family: "Montserrat";
+  margin-bottom: 20px;
+}

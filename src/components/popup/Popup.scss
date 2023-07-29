@@ -1,7 +1,7 @@
 .popup{
     width: 100%;
     background-color: #fff;
-    height: 130vh;
+    height: min-content;
     background: rgba(0, 0, 0, 0.9);
     padding-top: 10px;
     z-index: 10;
@@ -25,11 +25,18 @@
         &_color{
             margin: 10px 0;
         }
+        &_btn{
+            margin-bottom: 70px;
+        }
+        &_instruction{
+           margin: 3px 0;
+        }
     }
     &__container{
         width: 65%;
         min-height: 100vh;
         z-index: 20;
+        padding: 20px;
         background-color: #fff;
 
     }
@@ -57,6 +64,7 @@
         &__right{
             width: 50%;
             height: 100%;
+            padding-left: 20px;
         }
     }
     &__swiper{
@@ -90,6 +98,16 @@
     &__text{
         font-family: 'Montserrat';
         font-size: 15px;
+        &_margin{
+            margin-top: 20px;
+        }
+        span{
+            font-weight: 700;
+            font-family: 'Montserrat';
+        }
+        &_idea{
+            margin: 25px 0;
+        }
     }
     &__price{
         font-family: 'Montserrat';
@@ -98,6 +116,58 @@
         font-weight: 700;
         margin-top: 20px;
         margin-bottom: 10px;
+    }
+    &__itemAmount{
+        height: 49px;
+        border: 1px solid #000;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 20px;
+        font-family: 'Montserrat';
+        &__symbol{
+            display: flex;
+            align-items: center;
+            width: 15px;
+            height: 100%;
+            & img{
+                width: 15px;
+                height: 15px;
+            }
+            cursor: pointer;
+            .popap__itemAmount__minus{
+            width: 13px;
+            height: 5px;
+            }
+            .popap__itemAmount__plus{
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+    &__basketBtn{
+        margin-top: 20px;
+        margin-left: 10px;
+        height: 49px;
+        width: 190px;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Montserrat';
+        color: #fff;
+        background-color: #FB472E;
+    }
+    &__circle{
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #000;
+        margin-right: 5px;
     }
 }
 body{
