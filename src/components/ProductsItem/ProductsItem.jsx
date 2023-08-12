@@ -1,6 +1,6 @@
 import './ProductsItem.css';
 
-function ProductsItem(props) {
+function ProductsItem(props,{popup, setPopup, popupCordinate, setPopupCordinate}) {
   
     if(props.type === 'cover'){
         return(
@@ -14,7 +14,7 @@ function ProductsItem(props) {
                     <p className="productsItem__price">{props.price}</p>
                 </div>
                 <div className="productsItem__main__bottom">
-                    <button className="productsItem__btn" id={'btn'+props._id}>ДОДАТИ У КОШИК</button>
+                    <button className="productsItem__btn"  id={'btn'+props._id}>ДОДАТИ У КОШИК</button>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@ function ProductsItem(props) {
                     <p className="productsItem__price">{props.price}</p>
                 </div>
                 <div className="productsItem__main__bottom">
-                     <button className="productsItem__btn" id={'btn'+props._id}>ДОДАТИ У КОШИК</button>
+                     <button className="productsItem__btn" id={'btn'+props._id} >ДОДАТИ У КОШИК</button>
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@ function SwiperPage1(){
           clickable: true,
         }} 
          navigation = {true}
-         disableOnInteraction={false} 
+          
          modules={[Navigation,Pagination,Autoplay,EffectFade]} 
          style={{
             "--swiper-navigation-size": "60px",

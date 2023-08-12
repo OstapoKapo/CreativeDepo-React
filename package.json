@@ -8,8 +8,8 @@
     "@testing-library/user-event": "^13.5.0",
     "jsonfile": "^6.1.0",
     "mongoose": "^7.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.0-canary-493f72b0a-20230727",
+    "react-dom": "^18.3.0-canary-493f72b0a-20230727",
     "react-scripts": "5.0.1",
     "swiper": "^9.4.1",
     "web-vitals": "^2.1.4"

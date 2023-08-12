@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Popup.css';
 import PopupColor from '../PopupColor/PopupColor';
 import PopupSize from '../PopupSize/PopupSize';
@@ -11,11 +11,34 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 
-export default function popup() {
+export default function Popup({popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem}) {
+
+
+const closePopup = (e) => {
+  setPopup(false)
+}
+
+
+const style = {
+  display: popup ? 'flex' : 'none',
+  top: popup ?  popupCordinate[1]-popupCordinate[0]+'px'  : 0
+}; 
+
+
+  useEffect(()  => {
+  popup ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
+    return () => {
+      document.body.style.overflowY = 'scroll';
+   
+    };
+  });
+
+  
+
   return (
-    <div className='popup'>
+    <div className='popup' style={style}>
       <div className="popup__row popup__row_cancel">
-        <div className="popup__closeBtn"><img src={Close} alt="Close" /></div>
+        <div className="popup__closeBtn"><img src={Close} alt="Close" onClick={closePopup}/></div>
       </div>
       <div className="popup__container">
         <div className="popup__main">
@@ -27,37 +50,31 @@ export default function popup() {
                 "--swiper-navigation-size": "60px",
               }}
                >
-                <SwiperSlide className='popup__swiper__slide'>
-                    <img src='img/hoodieUkraine.png' alt="" />
-                </SwiperSlide>
-                <SwiperSlide className='popup__swiper__slide'>
-                    <img src='img/hoodieUkraine.png' alt="" />
-                </SwiperSlide>
-                <SwiperSlide className='popup__swiper__slide'>
-                    <img src='img/hoodieUkraine.png' alt="" />
-                </SwiperSlide>
+                 { productElem[0].img?.map((item) => (
+                    <SwiperSlide className='popup__swiper__slide'>
+                      <img src={'img/' + item.image} alt="" />
+                    </SwiperSlide>
+                 ))}
+               
               </Swiper>
               <div className="popup__row popup__row_swiper">
-                <div className="popup__swiper__img">
-                  <img src="img/hoodieUkraine.png" alt="" />
-                </div>
-                <div className="popup__swiper__img">
-                  <img src="img/hoodieUkraine.png" alt="" />
-                </div>
-                <div className="popup__swiper__img">
-                  <img src="img/hoodieUkraine.png" alt="" />
-                </div>
+              { productElem[0].img?.map((item) => (
+                     <div className="popup__swiper__img">
+                     <img src={'img/' + item.image} alt="" />
+                   </div>
+                 ))}
               </div>
           </div>
           <div className="popup__main__right">
-            <div className="popup__header">ФУТБОЛКА IM UKRAINIAN</div>
+            <div className="popup__header">{productElem[0].name || 'dasdads'}</div>
             <div className="popup__text">Код товару: 450834361112</div>
-            <div className="popup__price">1 200 грн.</div>
+            <div className="popup__price">1 200 грн.</div> 
             <div className="popup__text">Колір</div>
-            <PopupColor key={1} img={'hoodieUkraine.png'} color={'чорний'}/>
-            <PopupColor key={2} img={'hakiHoodieUkraine.jpg'} color={'Хакі'}/>
-            <div className="popup__text popup__text_margin">Розмір</div>
-            <PopupSize key={1} type={'t-shirt'}/>
+            { productElem[0].img?.map((item) => (
+             <PopupColor key={item.color} img={item.image} color={item.color}/>
+            ))}
+            {productElem[0].type == 'cap' ? '' : <div className="popup__text popup__text_margin">Розмір</div>}
+             <PopupSize key={productElem[0]._id} type={productElem[0].type}/>
             <div className="popup__row popup__row_btn">
             <div className="popup__itemAmount">
              <div className="popup__itemAmount__symbol minusItemAmount">

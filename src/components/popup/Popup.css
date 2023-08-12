@@ -1,13 +1,16 @@
 .popup {
   width: 100%;
   background-color: #fff;
-  height: min-content;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.9);
-  padding-top: 10px;
+  padding: 10px 0 30px 0;
   z-index: 10;
+  position: absolute;
+  top: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
 }
 .popup__row {
   width: 100%;
@@ -35,7 +38,7 @@
 }
 .popup__container {
   width: 65%;
-  min-height: 100vh;
+  height: min-content;
   z-index: 20;
   padding: 20px;
   background-color: #fff;

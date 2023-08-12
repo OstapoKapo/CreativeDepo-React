@@ -11,7 +11,10 @@ import { useState, useEffect } from 'react';
 
 function Container() {
 
+  let [popup, setPopup] = useState(false);
+  let [popupCordinate, setPopupCordinate] = useState([])
   let [products, setProducts] = useState([]);
+  let [productElem, setProductElem] = useState([{}])
 
   useEffect(() => {
     fetch("http://localhost:8000/message")
@@ -27,10 +30,10 @@ function Container() {
             <Header />
             <Swiper />
             <Filter products={products} setProducts={setProducts}/>
-            <Prodcuts products={products} setProducts={setProducts}/>
+            <Prodcuts productElem={productElem} setProductElem={setProductElem}  products={products} setProducts={setProducts} popup={popup} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} setPopup={setPopup}/>
             <HelpUkraine />
             <Footer />
-            <Popup />
+            <Popup productElem={productElem} setProductElem={setProductElem} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} popup={popup} setPopup={setPopup}/>
     </div>
   );
 }
