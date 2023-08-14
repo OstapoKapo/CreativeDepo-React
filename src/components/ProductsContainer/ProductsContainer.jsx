@@ -2,7 +2,7 @@ import './ProductsContainer.css';
 import ProductsItem from '../ProductsItem/ProductsItem';
 import React, { useState, useEffect } from "react";
 
-function ProductsContainer({products, setProducts, popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem}) {
+function ProductsContainer({products, setProducts, popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem, randomElements, setRandomElements}) {
    
     const DisplayPopup = (e) => {
     // let target = e.target.closest('.productsItem__btn');
@@ -16,6 +16,20 @@ function ProductsContainer({products, setProducts, popup, setPopup, popupCordina
       let targetId = target.id.substring(3) 
       let elem = products.filter(item => item._id == targetId);
       setProductElem(elem)
+      let someOfProducts = []
+      for(let i = 0;i<4;i++){
+        let item = products[Math.floor(Math.random()*products.length)];
+        if(item !== productElem){
+          if(!someOfProducts.includes(item)){
+            someOfProducts.push(item)
+            setRandomElements([...someOfProducts])
+          }else{
+            i--
+          }
+        }else{
+          i--
+        }
+      }
       console.log(elem)
     }
  }

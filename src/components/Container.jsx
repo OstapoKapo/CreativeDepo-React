@@ -15,6 +15,7 @@ function Container() {
   let [popupCordinate, setPopupCordinate] = useState([])
   let [products, setProducts] = useState([]);
   let [productElem, setProductElem] = useState([{}])
+  let [randomElements, setRandomElements] = useState([{}])
 
   useEffect(() => {
     fetch("http://localhost:8000/message")
@@ -30,10 +31,10 @@ function Container() {
             <Header />
             <Swiper />
             <Filter products={products} setProducts={setProducts}/>
-            <Prodcuts productElem={productElem} setProductElem={setProductElem}  products={products} setProducts={setProducts} popup={popup} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} setPopup={setPopup}/>
+            <Prodcuts randomElements={randomElements} setRandomElements={setRandomElements} productElem={productElem} setProductElem={setProductElem}  products={products} setProducts={setProducts} popup={popup} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} setPopup={setPopup}/>
             <HelpUkraine />
             <Footer />
-            <Popup productElem={productElem} setProductElem={setProductElem} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} popup={popup} setPopup={setPopup}/>
+            <Popup randomElements={randomElements} setRandomElements={setRandomElements} products={products} setProducts={setProducts} productElem={productElem} setProductElem={setProductElem} popupCordinate={popupCordinate} setPopupCordinate={setPopupCordinate} popup={popup} setPopup={setPopup}/>
     </div>
   );
 }

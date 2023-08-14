@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 
-export default function Popup({popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem}) {
+export default function Popup({popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem, products, setProducts, randomElements, setRandomElements}) {
 
 
 const closePopup = (e) => {
@@ -29,10 +29,10 @@ const style = {
   popup ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
     return () => {
       document.body.style.overflowY = 'scroll';
-   
-    };
+          };
   });
 
+  
   
 
   return (
@@ -112,9 +112,14 @@ const style = {
             </div>
           </div>
         </div>
-        <PopupSeeAlso />
+        <div className="seeAlso">
+            <div className="seeAlso__header">ДИВІТЬСЯ ТАКОЖ:</div>
+            <div className="popup__row">
+            {console.log(randomElements)}
+            {/* {randomElements.map((item) => <PopupSeeAlso key={item._id} id={item._id} img={item.img[0].image} name={item.name} size={item.size} material={item.material} price={item.price} />)} */}
+            </div>
+        </div>
       </div>
     </div>
   )
 }
-// $('#popap').css('top',`${pageY-clientY}px`)
