@@ -1,9 +1,0 @@
-@import 'src/scss/mixins.scss';
-
-.main{
-    @include block(auto);
-    flex-direction: column;
-    align-items: center;
-    background-color: #131313;
-}
-

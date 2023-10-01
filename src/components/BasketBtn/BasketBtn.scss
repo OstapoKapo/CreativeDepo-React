@@ -1,0 +1,36 @@
+@import 'src/scss/mixins.scss';
+.basketBtn{
+    &__container{
+        width: 100%;
+        height: min-content;
+        z-index: 10000;
+        @include center();
+        padding-right: 50px;
+        justify-content: end;
+    }
+    width: 80px;
+    background-color: #131313;
+    border: 1px solid red;
+    height: 80px;
+    position: fixed;
+    top: 10%;
+    border-radius: 50%;
+    @include center();
+    color: #fff;
+    img{
+        width: 40px;
+        height: 40px;
+    }
+    &__amount{
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: red;
+        @include center();
+        color: #fff;
+        margin-top: 60px;
+        margin-left: 60px;
+    }
+}
+

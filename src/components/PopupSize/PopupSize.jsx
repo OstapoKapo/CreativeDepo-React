@@ -2,6 +2,14 @@ import React from 'react';
 import './PopupSize.css'
 
 export default function PopupSize(props) {
+
+  const handleProdcutSize = (e) => {
+    let product = props.productForBasket;
+    product.size = e.target.value;
+    props.setProductForBasket(product)
+  }
+
+
   if(props.type == 'cap'){
     return (
       <div>
@@ -10,7 +18,7 @@ export default function PopupSize(props) {
   }else if(props.type == 'cover'){
     return(
       <div>
-        <select name="itemSize" className="popup__select" id="itemSize">
+        <select name="itemSize" onChange={handleProdcutSize} className="popup__select" id="itemSize">
              <option value="Iphone 7/8">Iphone 7/8</option>
              <option value="Iphone 7+/8+">Iphone 7+/8+</option>
              <option value="Iphone X/XS">Iphone X/XS</option>
@@ -35,7 +43,7 @@ export default function PopupSize(props) {
   }else{
     return (
       <div>
-         <select name="itemSize" className="popup__select" id="itemSize">
+         <select name="itemSize" onChange={handleProdcutSize} className="popup__select" id="itemSize">
                <option value="XS">XS</option>
                <option value="S">S</option>
                <option value="M">M</option>

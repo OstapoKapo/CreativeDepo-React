@@ -1,0 +1,40 @@
+.basketBtn {
+  width: 80px;
+  background-color: #131313;
+  border: 1px solid red;
+  height: 80px;
+  position: fixed;
+  top: 10%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.basketBtn__container {
+  width: 100%;
+  height: min-content;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  justify-content: end;
+}
+.basketBtn img {
+  width: 40px;
+  height: 40px;
+}
+.basketBtn__amount {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 60px;
+  margin-left: 60px;
+}

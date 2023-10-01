@@ -1,0 +1,9 @@
+.main{
+    background-color: #131313;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}

@@ -15,7 +15,7 @@ function ProductsContainer({products, setProducts, popup, setPopup, popupCordina
       setPopup(true);
       let targetId = target.id.substring(3) 
       let elem = products.filter(item => item._id == targetId);
-      setProductElem(elem)
+      setProductElem(elem[0])
       let someOfProducts = []
       for(let i = 0;i<4;i++){
         let item = products[Math.floor(Math.random()*products.length)];

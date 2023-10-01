@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import './Popup.css';
 import PopupColor from '../PopupColor/PopupColor';
 import PopupSize from '../PopupSize/PopupSize';
@@ -11,13 +11,42 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 
-export default function Popup({popup, setPopup, popupCordinate, setPopupCordinate, productElem, setProductElem, products, setProducts, randomElements, setRandomElements}) {
+export default function Popup({popup, setPopup, popupCordinate, productElem, busketAmount, setBasketAmount, basketArr, setBasketArr}) {
 
+let [productAmount, setProductAmount] = useState(1);
+
+
+
+let [productForBasket, setProductForBasket] = useState(null);
+
+useEffect(()=>{
+ if(productElem !== null){
+  let size = '';
+
+  if(productElem.type === 'cover'){
+    size = 'Iphone 7/8';
+  }else if(productElem.type === 'cap'){
+    size = 'one size';
+  }else if(productElem.type === 't-shirt' || productElem.type === 'hoodie'){
+    size = 'xs'
+  }
+    setProductForBasket({
+      name:productElem.name,
+    size: size,
+    price:productElem.price,
+    image:productElem.img[0].image,
+    amount:1,
+    color:productElem.img[0].color
+    })
+    setProductAmount(1)
+  }
+},[popup])
 
 const closePopup = (e) => {
   setPopup(false)
 }
 
+const swiper = useRef(null);
 
 const style = {
   display: popup ? 'flex' : 'none',
@@ -26,12 +55,50 @@ const style = {
 
 
   useEffect(()  => {
-  popup ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
+  popup ? document.body.style.overflowY = 'hidden' :  document.body.style.overflowY = 'scroll';
     return () => {
       document.body.style.overflowY = 'scroll';
           };
   });
 
+  const filterImgHandle = (e) => {
+    let target = e.target;
+    let targetParent = target.closest('.popup__swiper__img');
+    let productInfo = productElem.img[targetParent.getAttribute('data-action')];
+    swiper.current.swiper.slideTo(targetParent.getAttribute('data-action'));
+  }
+
+  const productAmountHandle = (e) => {
+    let target = e.target;
+    if(target.alt == 'plus'){
+      setProductAmount(productAmount+1);
+    }else if(target.alt == 'minus'){
+      if(productAmount>1){
+        setProductAmount(productAmount-1);
+      }
+    }
+  }
+
+  useEffect(()=>{
+    if(productForBasket !== null){
+      let product = productForBasket;
+      product.amount = productAmount;
+      setProductForBasket(product)
+    }
+  },[productAmount]);
+
+  const addProductHandle = (e) => {
+    let arr = [...basketArr];
+    console.log(basketArr)
+   if(!arr.includes(productForBasket)){
+    arr.push(productForBasket);
+    setBasketArr(arr);
+    setBasketAmount(arr.length);
+   }
+   else{
+    console.log('err')
+   }
+  }
   
   
 
@@ -43,49 +110,49 @@ const style = {
       <div className="popup__container">
         <div className="popup__main">
           <div className="popup__main__left">
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper popup__swiper" 
+            <Swiper ref={swiper} navigation={true} modules={[Navigation]} className="mySwiper popup__swiper" 
                loop={true} 
                effect={"fade"} 
                style={{
                 "--swiper-navigation-size": "60px",
               }}
                >
-                 { productElem[0].img?.map((item) => (
+                 {productElem !== null ?  productElem.img.map((item) => (
                     <SwiperSlide className='popup__swiper__slide'>
                       <img src={'img/' + item.image} alt="" />
                     </SwiperSlide>
-                 ))}
+                 )) : '' }
                
               </Swiper>
               <div className="popup__row popup__row_swiper">
-              { productElem[0].img?.map((item) => (
-                     <div className="popup__swiper__img">
+              {productElem !== null ?  productElem.img.map((item) => (
+                     <div className="popup__swiper__img" onClick={filterImgHandle} data-action={item.number}>
                      <img src={'img/' + item.image} alt="" />
                    </div>
-                 ))}
+                 )) : ''}
               </div>
           </div>
           <div className="popup__main__right">
-            <div className="popup__header">{productElem[0].name || 'dasdads'}</div>
+            <div className="popup__header">{productElem !== null ? productElem.name : ''}</div>
             <div className="popup__text">Код товару: 450834361112</div>
             <div className="popup__price">1 200 грн.</div> 
             <div className="popup__text">Колір</div>
-            { productElem[0].img?.map((item) => (
-             <PopupColor key={item.color} img={item.image} color={item.color}/>
-            ))}
-            {productElem[0].type == 'cap' ? '' : <div className="popup__text popup__text_margin">Розмір</div>}
-             <PopupSize key={productElem[0]._id} type={productElem[0].type}/>
+            {productElem !== null ?  productElem.img.map((item) => (
+             <PopupColor  productElem={productElem} productForBasket={productForBasket} setProductForBasket={setProductForBasket} imgIndex={item.number} swiper={swiper} key={item.number} img={item.image} color={item.color}/>
+            )) : ''}
+            { productElem !== null ?  productElem.type == 'cap' ? '' : <div className="popup__text popup__text_margin">Розмір</div> : ''}
+             {productElem !== null ? <PopupSize productForBasket={productForBasket} setProductForBasket={setProductForBasket} key={productElem._id} type={productElem.type}/> : ''}
             <div className="popup__row popup__row_btn">
-            <div className="popup__itemAmount">
+            <div className="popup__itemAmount " onClick={productAmountHandle}>
              <div className="popup__itemAmount__symbol minusItemAmount">
                <img className="popup__itemAmount__minus " src={Minus} alt="minus"/>
              </div>
-             <div className="popup__itemAmount__text itemAmount">1</div>
+             <div className="popup__itemAmount__text itemAmount">{productAmount}</div>
              <div className="popup__itemAmount__symbol popap__itemAmount_plus plusItemAmount">
                <img className="popup__itemAmount__plus" src={Plus} alt="plus"/>
              </div>
            </div>
-           <div className="popup__basketBtn">ДОДАТИ У КОШИК</div>
+           <div className="popup__basketBtn" onClick={addProductHandle}>ДОДАТИ У КОШИК</div>
             </div>
             <div className="popup__text"><span>Розмір: </span> XS, S, M, L, XL, XXL</div>
             <div className="popup__text"><span>Кольори: </span>  чорний, хакі</div>
@@ -115,7 +182,7 @@ const style = {
         <div className="seeAlso">
             <div className="seeAlso__header">ДИВІТЬСЯ ТАКОЖ:</div>
             <div className="popup__row">
-            {console.log(randomElements)}
+            {/* {console.log(randomElements)} */}
             {/* {randomElements.map((item) => <PopupSeeAlso key={item._id} id={item._id} img={item.img[0].image} name={item.name} size={item.size} material={item.material} price={item.price} />)} */}
             </div>
         </div>
